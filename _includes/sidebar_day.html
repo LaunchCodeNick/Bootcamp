@@ -1,0 +1,17 @@
+<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="{{ site.url }}">Course Material</a></h6>
+		<h6><a href="{{ site.url | prepend: site.baseurl }}/weeks/week{{ page.week }}.html">Week {{ page.week }} Material</a></h6>
+		<h6><a href="{{ site.url | prepend: site.baseurl }}/days/day{{ page.day }}.html">Day {{ page.day }} Material</a></h6>
+		<ul>
+		{% assign sorted_units = site.units | sort: "position" %}
+		{% for unit in sorted_units %}
+		{% if unit.day == page.day %}
+			<li>
+				<a href="{{ unit.url | prepend: site.baseurl }}">{{ unit.title }}</a>
+			</li>
+		{% endif %}
+		{% endfor %}
+		</ul>
+	</section>
+</div>

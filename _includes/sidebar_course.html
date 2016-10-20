@@ -1,0 +1,24 @@
+<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="{{ site.url }}">Course Material</a></h6>
+		<ul>
+		{% assign weeks = site.weeks | sort: "position" %}
+		{% for week in weeks %}
+			<li>
+				<a href="{{ week.url | prepend: site.baseurl }}">{{ week.title }}</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</section>
+	<section>
+		<h6><a href="{{ site.url }}">Resources</a></h6>
+		<ul>
+		{% assign sorted_resources = site.resources | sort: "position" %}
+		{% for res in sorted_resources %}
+			<li>
+				<a href="{{ res.url | prepend: site.baseurl }}">{{ res.title }}</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</section>
+</div>

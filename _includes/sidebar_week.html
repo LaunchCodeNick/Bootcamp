@@ -1,0 +1,16 @@
+<div id="sidebar" class="sidebar">
+	<section>
+		<h6><a href="{{ site.url }}">Course Material</a></h6>
+		<h6><a href="{{ page.url | prepend: site.baseurl }}">Week {{ page.week }} Material</a></h6>
+		<ul>
+		{% assign days = site.days | sort: "position" %}
+		{% for day in days %}
+		{% if day.week == page.week %}
+			<li>
+				<a href="{{ day.url | prepend: site.baseurl }}">{{ day.title }}</a>
+			</li>
+		{% endif %}
+		{% endfor %}
+		</ul>
+	</section>
+</div>

@@ -1,0 +1,54 @@
+# ----
+# Site
+
+title: Java Camp
+description: This is the course website for LaunchCode's Java bootcamp.
+url: http://localhost:4000
+google_analytics_key:
+
+collections:
+  weeks:
+    title: Weeks
+    position: 1
+    output: true
+  
+  days:
+    title: Days
+    position: 2
+    output: true
+
+  units:
+    title: Units
+    position: 3
+    output: true
+
+  resources:
+    title: Resources
+    position: 4
+    output: true
+
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - readme.md
+  - LICENCE
+  
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
+
+# -----
+# Build
+markdown: kramdown
+permalinks: pretty
+highlighter: rouge
+
+# -----------
+# CloudCannon
+
+version: 3.0.3
